@@ -24,7 +24,7 @@ class Wrapping extends Component {
                                        <WrappingFourth value={value} />
                                     </div>
                                     <div className="row mt-3">
-                                        <WrappingTotal value={value}/>
+                                        <WrappingTotal value={value} history={this.props.history}/>
                                     </div>
                                 </div>
                             </div>

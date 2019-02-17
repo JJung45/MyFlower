@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {Button} from '../Button';
+import PayPal from './PayPal';
 
 class WrappingTotal extends Component {
     render() {
-        const {cartTotal,lastTotal,subPrice} = this.props.value;
-        
+        const {cartTotal,lastTotal,subPrice, clearCart, clearWrap} = this.props.value;
+        const history = this.props.history;
+
         return (
             <React.Fragment>
                 <div className="col-11 col-md-6 col-lg-6 mx-auto mt-2 text-left" style={{fontSize: 12.72+'px'}}>
@@ -23,9 +25,10 @@ class WrappingTotal extends Component {
                         <span className="text-title">Total :</span>
                         <strong>$ {lastTotal}</strong>
                     </h5>
-                    <Button order className="btn btn-outline text-uppercase px-5 mt-2" type="button" >
+                    {/* <Button order className="btn btn-outline text-uppercase px-5 mt-2" type="button" >
                         ORDER
-                    </Button>
+                    </Button> */}
+                    <PayPal total={lastTotal} clearCart={clearCart} clearWrap={clearWrap} history={history}></PayPal>
                 </div>
                 
             </React.Fragment>

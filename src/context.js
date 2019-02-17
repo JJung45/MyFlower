@@ -182,8 +182,20 @@ class FlowerProvider extends Component {
     }
 
     option4Val = (val) =>{
+        const Total = this.state.cartTotal;
         this.setState(()=>{
-            return {option_4: val, selectoption: 4}
+            return {option_4: val, selectoption: 4, subPrice: 0, lastTotal: Total}
+        })
+    }
+
+    clearWrap = () =>{
+        this.setState(()=>{
+            return{
+                subPrice: 0,
+                lastTotal:0,
+                option_4: "",
+                selectoption: 1,
+            };
         })
     }
 
